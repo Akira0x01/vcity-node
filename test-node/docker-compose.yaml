@@ -11,6 +11,7 @@ services:
     volumes:
       - ./share:/home/user/share
       - ./.vcity:/home/user/.vcity
+    user: "1000:1000"
     command: 
       - cp ./share/genesis.json ./genesis.json && cp ./share/start.sh ./start.sh && chmod +x ./start.sh && ./start.sh
       # - tail -f /dev/null
