@@ -2,3 +2,5 @@ scripts/node_modules
 node_modules
 windows/myimage*
 testnet/node*
+backend/dist
+backend/node_modules
