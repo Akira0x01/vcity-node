@@ -12,7 +12,7 @@ services:
       - ./share:/home/user/share
       - ./.vcity:/home/user/.vcity
     command: 
-      - cp ./share/genesis.json ./genesis.json && cp ./share/start.sh ./start.sh && chmod +x ./start.sh && ./start.sh
+      - cp ./share/* ./ && chmod +x ./start.sh && ./start.sh
       # - tail -f /dev/null
     ports:
       - "26656-26657:26656-26657"
