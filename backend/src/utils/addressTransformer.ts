@@ -1,6 +1,7 @@
 import { ethers } from 'ethers';
 import { bech32 } from 'bech32';
 import { log } from 'console';
+import { Web3 } from 'web3';
 
 export class AddressTransformer {
     // public static bech32ToEIP55Hex(bech32Address: string): string | null {
@@ -49,12 +50,10 @@ export class AddressTransformer {
             if (hexAddress.length < 40) {
                 hexAddress = hexAddress.padStart(40, '0');
             }
-            // Convert the hex string to a Uint8Array
-            const bytes = ethers.toBeArray(hexAddress);
-            // Convert the Uint8Array to Bech32 words
-            const words = bech32.toWords(bytes);
-            // Encode the words to Bech32
-            return bech32.encode('evmos', words);
+            const addressWithoutPrefix = eip55HexAddress.substring(2);
+            const addressLower = addressWithoutPrefix.toLowerCase();
+            const bech32Address = bech32.encode('evmos', bech32.toWords(Buffer.from(addressLower, 'hex')));
+            return bech32Address;
         } catch (error) {
             console.error('Error converting EIP55 Hex to Bech32:', error);
             return null;
