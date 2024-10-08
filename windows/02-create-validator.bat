@@ -1,0 +1,1 @@
+docker exec -it test-node /home/user/create-validator.sh

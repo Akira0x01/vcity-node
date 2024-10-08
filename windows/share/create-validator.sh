@@ -2,10 +2,10 @@
 
 set -e
 
-if [ "$#" -lt 1 ]; then
-  echo "Usage: $0 <mnemonic>"
-  exit 1
-fi
+# if [ "$#" -lt 1 ]; then
+#   echo "Usage: $0 <mnemonic>"
+#   exit 1
+# fi
 
 BIN_DIR="/home/user/bin"
 CHAIND="$BIN_DIR/evmosd"
@@ -14,12 +14,6 @@ CHAINID="vcitychain_20230825-1"
 DENOM_UNIT="uvcity"
 # PASSWORD="12345678"
 # PRIVATE_KEY=$1
-
-# create new key
-$CHAIND keys add validator --keyring-backend test --home $DATA_DIR --output json > "$HOME/.vcity/validator_key"
-
-# export account address to .vcity/validator_address
-$CHAIND debug addr $($CHAIND keys show validator -a --keyring-backend test --home $DATA_DIR) > "$HOME/.vcity/validator_address"
 
 # echo $PASSWORD | $CHAIND keys unsafe-import-eth-key validator $PRIVATE_KEY --home $DATA_DIR --keyring-backend test 
 # echo $CHAIND tendermint show-address --home $DATA_DIR
