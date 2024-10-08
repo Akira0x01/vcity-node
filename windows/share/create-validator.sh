@@ -34,4 +34,4 @@ $CHAIND tx staking create-validator \
   --home=$DATA_DIR \
   --yes
 
-$CHAIND query staking validators --home $DATA_DIR --chain-id $CHAINID
+# $CHAIND query staking validators --home $DATA_DIR --chain-id $CHAINID
