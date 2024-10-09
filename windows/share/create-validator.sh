@@ -19,7 +19,7 @@ DENOM_UNIT="uvcity"
 # echo $CHAIND tendermint show-address --home $DATA_DIR
 
 $CHAIND tx staking create-validator \
-  --amount=100000000000000000000$DENOM_UNIT \
+  --amount=1000000000000000000$DENOM_UNIT \
   --pubkey=$($CHAIND tendermint show-validator --home $DATA_DIR --chain-id $CHAINID) \
   --moniker="vcity-validator" \
   --chain-id=$CHAINID \
